@@ -12,6 +12,7 @@ target_link_directories(${PROJECT_NAME} PUBLIC ${CMAKE_INSTALL_PREFIX}/lib)
 find_package(Catch2 REQUIRED)
 add_dependencies(${PROJECT_NAME} Catch2)
 
-find_package(Migrator REQUIRED)
-target_link_libraries(${PROJECT_NAME} PUBLIC migrator)
-add_dependencies(${PROJECT_NAME} Migrator)
+find_package(SemVer REQUIRED)
+add_dependencies(${PROJECT_NAME} SemVer)
+
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/include)
